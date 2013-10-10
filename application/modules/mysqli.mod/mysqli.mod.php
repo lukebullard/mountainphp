@@ -11,7 +11,7 @@
         public function __construct()
         {
             mysqli_report(MYSQLI_REPORT_STRICT);
-            require("application/config/database.conf.php");
+            require("application/config/mysqli.conf.php");
             $this->init($mysqli['hostname'],$mysqli['username'],$mysqli['password'],$mysqli['database']);
         }
         public function init($hostname,$username,$password,$database)
@@ -115,5 +115,9 @@
             $sql->close();
             return $toReturn;
         }
+    }
+    function _shutdown_C_MOD_mysqli()
+    {
+        MOD_mysqli::$con->close();
     }
 ?>
