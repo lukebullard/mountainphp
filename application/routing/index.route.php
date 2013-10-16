@@ -8,5 +8,6 @@
 	$routing = array(
 		"index" => "sample/index"
 		,"/^([a-zA-Z ]+)$/" => "sample/submit"
+                ,"tests/pdo" => "tests/pdo"
 	);
 ?>
